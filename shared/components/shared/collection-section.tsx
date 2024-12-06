@@ -17,6 +17,9 @@ export const CollectionSection: React.FC<Props> = ({ className }) => {
     </div>
     <div className=" pb-4 grid grid-cols-2 gap-4">
         <CollectionSectionCard />
+        <CollectionSectionCard />
+        <CollectionSectionCard />
+        <CollectionSectionCard />
     </div>
 </div>
   );

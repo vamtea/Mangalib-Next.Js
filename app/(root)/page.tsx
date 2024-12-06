@@ -1,8 +1,10 @@
 import {
+  ActiveSection,
   Container,
   ForumTopik,
   Header,
   LastUpdates,
+  NewSection,
   ReviewSection,
   Slider,
 } from "@/shared/components/shared";
@@ -21,6 +23,8 @@ export default function Home() {
           <ForumTopik />
           <ReviewSection />
           <CollectionSection />
+          <ActiveSection />
+          <NewSection />
         </div>
       </Container>
     </>

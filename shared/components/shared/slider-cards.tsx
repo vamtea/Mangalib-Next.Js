@@ -1,6 +1,7 @@
 import React from "react";
 import image from "@/shared/img/avatar.jpg";
 import Image from "next/image";
+import Link from "next/link";
 interface Props {
   className?: string;
 }
@@ -15,10 +16,10 @@ export const SliderCards: React.FC<Props> = ({ className }) => {
         </div>
       </div>
 
-      <div>
+      <Link href="/mang/">
         <div className="text-[14px] font-bold break-words">Навание jfjfjfjf fjfjfjfjfj</div>
         <div className="text-[13px]">манхва</div>
-      </div>
+      </Link>
     </div>
   );
 };

@@ -8,3 +8,6 @@ export { LastUpdatesCard } from "./last-updates-card";
 export { ForumTopik } from "./forum-topik";
 export { ForumTopikItems } from "./forum-topik-items";
 export { ReviewSection } from "./review-section";
+export { ActiveSection } from "./active-section";
+export { NewSection } from "./new-section";
+export { CatalogSide } from "./catalog-side";

@@ -44,7 +44,7 @@ interface Props {
 
 export const Header: React.FC<Props> = ({ className }) => {
   return (
-    <header className={cn("bg-[#fff3e0] sticky top-0 z-10", className)}>
+    <header className={cn("bg-[#fff3e0] sticky top-0 z-50", className)}>
       <Container className="flex flex-row items-center">
         {/* left side */}
         <Link href="/">
