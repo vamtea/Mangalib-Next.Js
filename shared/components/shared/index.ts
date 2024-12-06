@@ -1,1 +1,10 @@
-export { Header} from './header'
+export { Header } from "./header";
+export { Container } from "./container";
+export { Avatar } from "./avatar";
+export { Slider } from "./slider";
+export { SliderCards } from "./slider-cards";
+export { LastUpdates } from "./last-updates";
+export { LastUpdatesCard } from "./last-updates-card";
+export { ForumTopik } from "./forum-topik";
+export { ForumTopikItems } from "./forum-topik-items";
+export { ReviewSection } from "./review-section";
