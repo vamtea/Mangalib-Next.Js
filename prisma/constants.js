@@ -149,7 +149,7 @@ export const genre = [
   {
     name: "Этти",
   },
-];
+].map((obj, index) => ({ id: index + 1, ...obj }));
 
 export const tags = [
   {
@@ -272,4 +272,133 @@ export const tags = [
   {
     name: "Животные компаньоны",
   },
-];
+].map((obj, index) => ({ id: index + 1, ...obj }));
+
+export const ageRating = [
+  {
+    name: "Нет",
+  },
+  {
+    name: "12+",
+  },
+  {
+    name: "18+",
+  },
+  {
+    name: "6+",
+  },
+  {
+    name: "16+",
+  },
+].map((obj, index) => ({ id: index + 1, ...obj }));
+
+
+
+export const type = [
+  {
+    name: "Манга",
+  },
+  {
+    name: "Манхва",
+  },
+  {
+    name: "Руманга",
+  },
+  {
+    name: "OEL-манга",
+  },
+  {
+    name: "Маньхуа",
+  },
+  {
+    name: "Комикс",
+  },
+].map((obj, index) => ({ id: index + 1, ...obj }));
+
+export const releasedFormat = [
+  {
+    name: "4-кома(Ёнкома)",
+  },
+  {
+    name: "Додзинси",
+  },
+  {
+    name: "Сингл",
+  },
+  {
+    name: "Вебтун",
+  },
+  {
+    name: "Сборник",
+  },
+  {
+    name: "В цвете",
+  },
+  {
+    name: "Веб",
+  },
+].map((obj, index) => ({ id: index + 1, ...obj }));
+
+export const status = [
+  {
+    name: "Онгоинг",
+  },
+  {
+    name: "Анонс",
+  },
+  {
+    name: "Выпуск прекращен",
+  },
+  {
+    name: "Завершен",
+  },
+  {
+    name: "Приостановлен",
+  },
+].map((obj, index) => ({ id: index + 1, ...obj }));
+
+export const translateStatus = [
+  {
+    name: "Продолжается",
+  },
+  {
+    name: "Заморожен",
+  },
+  {
+    name: "Завершён",
+  },
+  {
+    name: "Заброшен",
+  },
+].map((obj, index) => ({ id: index + 1, ...obj }));
+
+export const other = [
+  {
+    name: "Нет перевода уже 3 месяца",
+  },
+  {
+    name: "Лицензирован",
+  },
+  {
+    name: "Можно приобрести",
+  },
+].map((obj, index) => ({ id: index + 1, ...obj }));
+
+export const myList = [
+  {
+    name: "Читаю",
+  },
+  {
+    name: "Брошено",
+  },
+  {
+    name: "Любимое",
+  },
+  {
+    name: "В планах",
+  },
+  {
+    name: "Прочитано",
+  },
+].map((obj, index) => ({ id: index + 1, ...obj }));
+

@@ -25,6 +25,70 @@ model Item {
     imageUrl String
     type     String
 
+    ageRating   AgeRating @relation(fields: [ageRatingId], references: [id])
+    ageRatingId Int
+
+    Type   Type? @relation(fields: [typeId], references: [id])
+    typeId Int?
+
+    ReleasedFormat   ReleasedFormat? @relation(fields: [releasedFormatId], references: [id])
+    releasedFormatId Int?
+
+    Status   Status? @relation(fields: [statusId], references: [id])
+    statusId Int?
+
+    TranslateStatus   TranslateStatus? @relation(fields: [translateStatusId], references: [id])
+    translateStatusId Int?
+    
+    Other             Other?           @relation(fields: [otherId], references: [id])
+    otherId           Int?
+
+    MyList            MyList?          @relation(fields: [myListId], references: [id])
+    myListId          Int?
+
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+
+}
+
+model AgeRating {
+    id    Int    @id @default(autoincrement())
+    name  String
+    items Item[]
+}
+
+model Type {
+    id    Int    @id @default(autoincrement())
+    name  String
+    items Item[]
+}
+
+model ReleasedFormat {
+    id    Int    @id @default(autoincrement())
+    name  String
+    items Item[]
+}
+
+model Status {
+    id    Int    @id @default(autoincrement())
+    name  String
+    items Item[]
+}
+
+model TranslateStatus {
+    id    Int    @id @default(autoincrement())
+    name  String
+    items Item[]
+}
+
+model Other {
+    id    Int    @id @default(autoincrement())
+    name  String
+    items Item[]
+}
+
+model MyList {
+    id    Int    @id @default(autoincrement())
+    name  String
+    items Item[]
 }

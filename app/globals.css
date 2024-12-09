@@ -69,9 +69,31 @@ body {
   background: #dbdadd;
 }
 
-.text-shadow{
-  text-shadow: 0 0 2px rgba(0, 0, 0, .6);
+.text-shadow {
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
 }
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none; /* Убираем стрелки */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #a5a5a5b9;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+}
+
+
 
 @layer utilities {
   .text-balance {

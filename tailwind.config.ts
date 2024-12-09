@@ -13,11 +13,16 @@ export default {
       boxShadow: {
         custom: "0 1px 3px rgba(0, 0, 0, 0.12)",
       },
-	  backgroundImage: {
-        'updates-gradient': 'linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .18) 24px, transparent)',
+      backgroundImage: {
+        "updates-gradient":
+          "linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .18) 24px, transparent)",
       },
-	  transform: {
-        'custom-rotate-translate': 'rotate(-10deg) translate(-60px, -20px)',
+      transform: {
+        "custom-rotate-translate": "rotate(-10deg) translate(-60px, -20px)",
+      },
+      backgroundColor: {
+        "filtersButton": "rgba(116, 116, 128, 0.05)",
+        
       },
       colors: {
         background: "hsl(var(--background))",
@@ -65,8 +70,9 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("tailwind-scrollbar")]
 } satisfies Config;

@@ -1,12 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import {CatalogSide } from '@/shared/components/shared'
-import { Search } from 'lucide-react';
+import { CatalogSide, Container, Filters } from "@/shared/components/shared";
 
 export default function Catalog() {
   return (
-    <div>
+    <Container>
+      <div className="flex py-4 gap-4">
         <CatalogSide />
-    </div>
+        <Filters   className=" sticky top-[1px]"/>
+      </div>
+    </Container>
   );
-};
+}
