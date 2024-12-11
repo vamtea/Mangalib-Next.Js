@@ -19,3 +19,4 @@ export { FiltersGenreInput } from "./filters-genre-input";
 export { FiltersCheckboxSection } from "./filters-checkbox-section";
 export { FiltersFooter } from "./filters-footer";
 export { FiltersFooterButton } from "./filters-footer-button";
+export { SearchDrawer } from "./search-drawer";

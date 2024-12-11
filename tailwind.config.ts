@@ -12,6 +12,7 @@ export default {
     extend: {
       boxShadow: {
         custom: "0 1px 3px rgba(0, 0, 0, 0.12)",
+        "catalogDropShadow": "0 4px 16px rgba(0, 0, 0, .2)",
       },
       backgroundImage: {
         "updates-gradient":
