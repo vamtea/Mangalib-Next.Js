@@ -11,12 +11,14 @@ export default {
   theme: {
     extend: {
       boxShadow: {
-        custom: "0 1px 3px rgba(0, 0, 0, 0.12)",
+        "custom": "0 1px 3px rgba(0, 0, 0, 0.12)",
         "catalogDropShadow": "0 4px 16px rgba(0, 0, 0, .2)",
+        "translateCard": "rgba(0, 0, 0, .12) 0 1px 3px"
       },
       backgroundImage: {
         "updates-gradient":
           "linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .18) 24px, transparent)",
+          "gradientManga": "linear-gradient(to top, rgba(0, 0, 0, .9), transparent)"
       },
       transform: {
         "custom-rotate-translate": "rotate(-10deg) translate(-60px, -20px)",

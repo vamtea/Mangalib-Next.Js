@@ -8,7 +8,7 @@ interface Props {
 export const FiltersFooter: React.FC<Props> = ({ className }) => {
   return (
     <div className={className}>
-      <div className="flex gap-3 px-3 pt-2 pb-[10px]">
+      <div className="flex gap-3 px-3 pt-2 pb-[10px] bg-white">
         <FiltersFooterButton
           className=" border-[#dcdee2] border-[1px] rounded-[6px]  text-[#000000cc]"
           text={"Сбросить"}

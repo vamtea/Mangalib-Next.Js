@@ -4,7 +4,6 @@ import {Search } from 'lucide-react';
 
 interface Props {
     className?: string;
-    id: number
 }
 
 type SearchCatalogProps = {
@@ -12,8 +11,11 @@ type SearchCatalogProps = {
     id: number;
 }
 
-export const SearchDrawer: React.FC<Props> = ({ className, id }) => {
-    const [active, setActive] = React.useState<number | null>(0)
+
+
+export const SearchDrawer: React.FC<Props> = ({ className}) => {
+    const searchRef = React.useRef<HTMLDivElement>(null)
+    const [active, setActive] = React.useState<number>(1)
     const activeColor = "#212529"
     const searchCatalog: SearchCatalogProps[] = [
         {
@@ -46,17 +48,110 @@ export const SearchDrawer: React.FC<Props> = ({ className, id }) => {
         },
     ]
 
-    const activeItem = (id: number): string | null => {
+    const [visible, setVisible] = React.useState(true)
+
+
+    const activeItem = (id: number) => {
         const item = searchCatalog.find(item => Number(item.id ) === Number(id));
         return item ? item.name : null
     }
 
-    // console.log(active(3))
+    const activeSearh = () => {
+        if (active === 1) {
+            return (
+              <span>
+                Расширенный поиск тайтлов находится в{' '}
+                <Link href="/catalog" className="text-[#ff6d00]">
+                  каталоге
+                </Link>
+              </span>
+            );
+          }
+          
+        if (active === 2) {
+            return (
+                <span>
+                  Список всех команд можно найти {' '}
+                  <Link href="/catalog" className="text-[#ff6d00]">
+                    на этой странице
+                  </Link>
+                </span>
+              );
+        }
+        if (active === 3) {
+            return (
+                <span>
+                  Список всех персонажей можно найти{' '}
+                  <Link href="/catalog" className="text-[#ff6d00]">
+                    на этой странице
+                  </Link>
+                </span>
+              );
+        }
+        if (active === 4) {
+            return (
+                <span>
+                  Список всех персон можно найти{' '}
+                  <Link href="/catalog" className="text-[#ff6d00]">
+                    на этой странице
+                  </Link>
+                </span>
+              );
+        }
+        if (active === 5) {
+            return (
+                <span>
+                  Список всех франшиз можно найти{' '}
+                  <Link href="/catalog" className="text-[#ff6d00]">
+                    на этой странице
+                  </Link>
+                </span>
+              );
+        }
+        if (active === 6) {
+            return (
+                <span>
+                  Список всех издателей можно найти{' '}
+                  <Link href="/catalog" className="text-[#ff6d00]">
+                    на этой странице
+                  </Link>
+                </span>
+              );
+        }
+        if (active === 7) {
+            return (
+                <span>
+                  Топ 100, топ недели, список модераторов и т.п. можно найти{' '}
+                  <Link href="/catalog" className="text-[#ff6d00]">
+                    на этой странице
+                  </Link>
+                </span>
+              );
+        }
+        
+    }
+
+    React.useEffect(() => {
+        const handleOutsideClick = (event: MouseEvent) => {
+    
+            if(searchRef.current && !event.composedPath().includes(searchRef.current)){
+                setVisible(false)
+            }
+        }
+        document.body.addEventListener("click", handleOutsideClick)
+
+        return () => {
+            document.body.removeEventListener("click", handleOutsideClick)
+        }
+    }, [])
+
   return (
     <>
-<div className="bg-[#00000099] fixed inset-0 z-[70]"></div>
-
-    <div className="absolute top-0 left-0 right-0 bottom-0 max-w-[740px] mx-auto z-[71] p-[28px]">
+{ visible && (
+    
+    <div>
+        <div onClick={() => setVisible(false)} className="bg-[#00000099] fixed inset-0 z-[70]"></div>
+    <div ref={searchRef} className="absolute top-0 left-0 right-0 bottom-0 max-w-[740px] mx-auto z-[71] p-[28px]">
         <div className="bg-white rounded-[6px]">
             <div className="flex w-full gap-[14px] px-4 py-4 ">
                 <Search color="#dcdee2" size={20} />
@@ -81,11 +176,13 @@ export const SearchDrawer: React.FC<Props> = ({ className, id }) => {
             <div className="w-full h-[1px] border-t-[1px] border-[#] " />
             <div className="p-3 align-center items-center min-h-[100px] flex justify-center">
                 <span className="text-[#8a8a8e] text-[14px]"> 
-                    Расширенный поиск тайтлов находится в <Link href="/catalog" className="text-[#ff6d00]" >каталоге</Link>
+                    {activeSearh()}
                 </span>
                 </div>
         </div>
     </div>
+    </div>
+) }
     </>
   );
 };

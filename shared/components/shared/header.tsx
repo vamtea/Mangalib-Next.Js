@@ -54,7 +54,6 @@ import { type } from "@/prisma/constants";
 
 interface Props {
   className?: string;
-  onClickOpen: () => void;
 }
 
 type CatalogItemProps = {
@@ -63,9 +62,11 @@ type CatalogItemProps = {
   id: number;
 }
 
-export const Header: React.FC<Props> = ({ className, onClickOpen }) => {
+export const Header: React.FC<Props> = ({ className }) => {
   const [catalogPopup, setCatalogPopup] = React.useState(false);
   const [searchPopup, setSearchPopup] = React.useState(false);
+
+  const toggleSearchPopup = () => setSearchPopup(!searchPopup)
 
   const toggleCatalogPopup = () => {
     setCatalogPopup(!catalogPopup)
@@ -175,7 +176,7 @@ export const Header: React.FC<Props> = ({ className, onClickOpen }) => {
           </div>
           <div>
           <div 
-          onClick={() => setSearchPopup(true)}
+          onClick={toggleSearchPopup}
           className="flex items-center gap-1 hover:bg-[#ffac4036] cursor-pointer px-3 py-1 rounded-[6px] transition-colors duration-200 ease-in-out">
               <Search color="#000000" size={16} /> Поиск
             </div>
