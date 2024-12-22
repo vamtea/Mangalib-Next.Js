@@ -18,7 +18,7 @@ export default function Home() {
       <Slider />
       <NowReading />
       <Container className="flex gap-4">
-        <LastUpdates />
+        <LastUpdates  />
         <div className="flex flex-col flex-1">
           <ForumTopik />
           <ReviewSection />

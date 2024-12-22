@@ -18,77 +18,68 @@ model User {
     updatedAt DateTime @updatedAt
 }
 
-model Item {
+model MangaItem {
     id Int @id @default(autoincrement())
 
-    name     String
-    imageUrl String
-    type     String
+    name            String
+    otherName       String?
+    imageUrl        String
+    type            String
+    description     String
+    status          String
+    ageRating       String
+    releasedFormat  String[]
+    translateStatus String[]
+    other           String?
 
-    ageRating   AgeRating @relation(fields: [ageRatingId], references: [id])
-    ageRatingId Int
+    chapter Chapter[]
+    library Library?
 
-    Type   Type? @relation(fields: [typeId], references: [id])
-    typeId Int?
-
-    ReleasedFormat   ReleasedFormat? @relation(fields: [releasedFormatId], references: [id])
-    releasedFormatId Int?
-
-    Status   Status? @relation(fields: [statusId], references: [id])
-    statusId Int?
-
-    TranslateStatus   TranslateStatus? @relation(fields: [translateStatusId], references: [id])
-    translateStatusId Int?
-    
-    Other             Other?           @relation(fields: [otherId], references: [id])
-    otherId           Int?
-
-    MyList            MyList?          @relation(fields: [myListId], references: [id])
-    myListId          Int?
+    tags  Tags[]
+    genre Genre[]
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-
 }
 
-model AgeRating {
-    id    Int    @id @default(autoincrement())
-    name  String
-    items Item[]
+model Chapter {
+    id    Int      @id @default(autoincrement())
+    title String
+    page  String[]
+
+    mangaItem   MangaItem? @relation(fields: [mangaItemId], references: [id])
+    mangaItemId Int?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
 
-model Type {
-    id    Int    @id @default(autoincrement())
-    name  String
-    items Item[]
+model Library {
+    name String
+    id   Int    @id @default(autoincrement())
+
+    mangaItem   MangaItem? @relation(fields: [mangaItemId], references: [id])
+    mangaItemId Int?       @unique
 }
 
-model ReleasedFormat {
-    id    Int    @id @default(autoincrement())
-    name  String
-    items Item[]
+model Tags {
+    id Int @id @default(autoincrement())
+
+    name String
+
+    mangaItem MangaItem[]
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
 
-model Status {
-    id    Int    @id @default(autoincrement())
-    name  String
-    items Item[]
-}
+model Genre {
+    id Int @id @default(autoincrement())
 
-model TranslateStatus {
-    id    Int    @id @default(autoincrement())
-    name  String
-    items Item[]
-}
+    name String
 
-model Other {
-    id    Int    @id @default(autoincrement())
-    name  String
-    items Item[]
-}
+    mangaItem MangaItem[]
 
-model MyList {
-    id    Int    @id @default(autoincrement())
-    name  String
-    items Item[]
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }

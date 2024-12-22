@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import React from 'react';
-import { CollectionSectionCard } from './collection-section-card';
+import CollectionSectionCard  from './collection-section-card';
 
 interface Props {
     className?: string;

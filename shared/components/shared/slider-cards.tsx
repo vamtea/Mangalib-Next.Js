@@ -2,24 +2,43 @@ import React from "react";
 import image from "@/shared/img/avatar.jpg";
 import Image from "next/image";
 import Link from "next/link";
-interface Props {
-  className?: string;
-}
 
-export const SliderCards: React.FC<Props> = ({ className }) => {
+type MangaCardProps = {
+  className?: string;
+  imageUrl: string;
+  name: string;
+  type: string;
+  chapter: number;
+  id: number;
+};
+
+export const SliderCards: React.FC<MangaCardProps> = ({
+  className,
+  imageUrl,
+  name,
+  type,
+  chapter,
+  id
+}) => {
   return (
-    <div className="flex flex-col gap-[6px] w-[135px]">
+   <Link href={`/manga/${id}`}>
+     <div className="flex flex-col gap-[6px] w-[135px]">
       <div className="relative">
-        <Image className="h-[189px] w-[135px] rounded-md"  src={image} alt="avatar" />
+        <Image
+          className="h-[189px] w-[135px] rounded-md"
+          src={imageUrl}
+          alt="avatar"
+        />
         <div className="absolute left-[6px] bottom-[6px] bg-black/70 text-white py-[3px] px-[6px] text-[12px] rounded">
-          chapter 178
+          chapter {chapter}
         </div>
       </div>
 
       <Link href="/mang/">
-        <div className="text-[14px] font-bold break-words">Навание jfjfjfjf fjfjfjfjfj</div>
-        <div className="text-[13px]">манхва</div>
+        <div className="text-[14px] font-bold break-words">{name}</div>
+        <div className="text-[13px]">{type}</div>
       </Link>
     </div>
+   </Link>
   );
 };

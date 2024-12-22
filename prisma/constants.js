@@ -1,3 +1,8 @@
+const page = "https://img33.imgslib.link//manga/sweet-home-kim-carnby-/chapters/118675/Sweet_Home_ch00_01.png"
+const page1 = "https://img33.imgslib.link//manga/sweet-home-kim-carnby-/chapters/118675/Sweet_Home_ch00_01.png"
+
+
+
 export const genre = [
   {
     name: "Арт",
@@ -292,8 +297,6 @@ export const ageRating = [
   },
 ].map((obj, index) => ({ id: index + 1, ...obj }));
 
-
-
 export const type = [
   {
     name: "Манга",
@@ -402,3 +405,79 @@ export const myList = [
   },
 ].map((obj, index) => ({ id: index + 1, ...obj }));
 
+
+// export const mangaItem = [
+//   {
+//     name: "Милый дом",
+//     otherName: "Seuwiteu Hom",
+//     imageUrl: "https://cover.imglib.info/uploads/cover/sweet-home-kim-carnby-/cover/zL2inmMagDPC_250x350.jpg",
+//     type: "Манхва",
+//     description: "Твоя задротская душа Не любит всех — только себя.Ты шлёшь семью и мир вокруг, И без друзей твой ближний круг. Но как бывает иногда, Лишь потеряв всё навсегда, Решил ты небо не коптить И суицид взять совершить. Но мир на блажь твою плевал И кучу ужасов наслал. Теперь придётся как-то жить... Ну и всех монстров победить?",
+//     status: "Завершен",
+//     ageRating: "18+",
+//     tags: {
+//       connect: [
+//         tags[0].name, tags[1].name, tags[2].name,
+//       ]
+//     },
+//     genre: {
+//       connect:  [
+//         genre[0].name, genre[1].name, genre[2].name
+//       ]
+//     },
+//     releasedFormat: JSON.stringify([
+//       releasedFormat[0].name, releasedFormat[1].name, releasedFormat[2].name
+//     ]),
+//     translateStatus: ["Завершен"],
+//     chapter: [
+//       {title: "Chapter", page: [ String(page), String(page1)]}
+//     ],
+
+//   },
+//   {
+//     name: "Ох уж этот экстрасенс Сайки Кусуо!",
+//     imageUrl: "https://cover.imglib.info/uploads/cover/saiki-kusuo-no-psi-nan/cover/hgljAu9sJI57_250x350.jpg",
+//     type: "Манга",
+//     description: "Пародийная манга из журнала Сёнэн Джамп.Сайки Кусуо обладает кучей сверхспособностей, в том числе телепатией и телекинезом. Казалось бы, живи и пользуйся чудо-талантами на радость себе и другим. Но у Кусуо почему-то всё идёт наперекосяк. Однако, он пытается жить нормальной жизнью, несмотря на свои аномальные способности.",
+//     status: "Завершен",
+//     ageRating: "16+",
+//     tags: {
+//       connect: [
+//         tags[0].name, tags[1].name, tags[2].name,
+//       ]
+//     },
+//     genre: {
+//       connect:  [
+//         genre[0].name, genre[1].name, genre[2].name
+//       ]
+//     },
+//     releasedFormat: JSON.stringify([releasedFormat[0].name, releasedFormat[1].name, releasedFormat[2].name]),
+//     translateStatus: ["Завершен"],
+//     chapter: [
+//       {title: "Chapter", page: [ String(page), String(page1)]}
+//     ],
+//   },
+//   {
+//     name: "Лукизм",
+//     imageUrl: "https://cover.imglib.info/uploads/cover/oemojisangjuui/cover/xNmztlF1Omn8_250x350.jpg",
+//     type: "Манхва",
+//     description: "Пак Хён Сок — непривлекательный парень с избыточным весом, подвергающийся школьной травле. Он знает всё о беспомощности, страхе и несправедливости. Но однажды, решив начать новую жизнь, он вдруг обретает и новое тело. Как же поведёт себя извечный неудачник, получив небывалые силу и красоту, и впервые столкнувшись с восхищением окружающих? Докопается ли он до секретов внезапного преображения? И построит ли по-настоящему нового себя?...",
+//     status: "Онгоинг",
+//     ageRating: "16+",
+//     tags: {
+//       connect: [
+//         tags[0].name, tags[1].name, tags[2].name,
+//       ]
+//     },
+//     genre: {
+//       connect:  [
+//         genre[0].name, genre[1].name, genre[2].name
+//       ]
+//     },
+//     releasedFormat: JSON.stringify([releasedFormat[0].name, releasedFormat[1].name, releasedFormat[2].name]),
+//     translateStatus: ["Онгоинг"],
+//     chapter: [
+//       {title: "Chapter", page: [ String(page), String(page1)]}
+//     ],
+//   },
+// ]

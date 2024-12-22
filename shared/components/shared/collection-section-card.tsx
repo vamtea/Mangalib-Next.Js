@@ -1,7 +1,6 @@
 import { Bookmark, Eye, Layers, Star } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import image from "@/shared/img/avatar.jpg";
 import image2 from "@/shared/img/image-2.jpg";
 import image3 from "@/shared/img/image-3.jpg";
 import image4 from "@/shared/img/image-4.jpg";
@@ -9,8 +8,7 @@ import image4 from "@/shared/img/image-4.jpg";
 interface Props {
   className?: string;
 }
-
-export const CollectionSectionCard: React.FC<Props> = ({ className }) => {
+ const CollectionSectionCard: React.FC<Props> = ({ className }) => {
   return (
     <div className="bg-white flex flex-col  justify-center items-center rounded-[20px]">
       <div className="flex flex-col p-[18px] items-center gap-[10px] w-[236px]">
@@ -46,3 +44,5 @@ export const CollectionSectionCard: React.FC<Props> = ({ className }) => {
     </div>
   );
 };
+
+export default CollectionSectionCard;
