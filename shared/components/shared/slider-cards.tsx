@@ -21,11 +21,13 @@ export const SliderCards: React.FC<MangaCardProps> = ({
   id
 }) => {
   return (
-   <Link href={`/manga/${id}`}>
+   <Link href={`/mangaItem/${id}`}>
      <div className="flex flex-col gap-[6px] w-[135px]">
       <div className="relative">
         <Image
           className="h-[189px] w-[135px] rounded-md"
+          width={135}
+          height={189}
           src={imageUrl}
           alt="avatar"
         />

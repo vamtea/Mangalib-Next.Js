@@ -18,33 +18,33 @@
 
 import { prisma } from "@/prisma/prisma-client";
 import { NextRequest, NextResponse } from "next/server";
-// const express = require("express");
-// const app = express();
-
-// app.get("/api/mangaItem", async (req: NextRequest, res: NextResponse) => {
-//   try {
-//     const data = await prisma.mangaItem.findMany({
-//       include: {
-//         tags: true,
-//         genre: true,
-//         chapter: true,
-//       },
-//     });
-//     return NextResponse.json(data, {status: 200})
-
-//   } catch (error) {
-//     console.log(error, 'api');
-//   }
-// });
 
 export async function GET() {
     const mangaItem = await prisma.mangaItem.findMany({
-        include : {
+       
+        select: {
+            id: true,
+            name: true,
+            imageUrl: true,
             tags: true,
             genre: true,
-            chapter: true,
+            type: true,
         }
     });
 
-    return NextResponse.json(mangaItem)
+    const chapter = await prisma.chapter.findMany({
+        select: {
+            id: true,
+            title: true,
+            mangaItemId: true,
+            page: true,
+        }
+    })
+
+    const mangaItems = mangaItem.map((manga) => ({
+        ...manga,
+        chapter: chapter.filter((chapter) => chapter.mangaItemId === manga.id),
+      }));
+    return NextResponse.json(mangaItems)
 }
+

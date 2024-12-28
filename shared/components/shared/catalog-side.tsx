@@ -1,13 +1,48 @@
+'use client'
+
+
 import React from "react";
 import { Input } from "../ui/input";
 import { ArrowDownNarrowWide, ChevronDown, Search } from "lucide-react";
 import { CatalogSideCard } from "./catalog-side-card";
+import { mangaItem } from "@/shared/services/mangaItem";
+import { Chapter, MangaItem } from "@prisma/client";
+import { chapter } from "@/shared/services/chapter";
 
 interface Props {
   className?: string;
 }
 
 export const CatalogSide: React.FC<Props> = ({ className }) => {
+    const [mangaItems, setMangaItems] = React.useState<MangaItem[]>([])
+  // const [chapters, setChapters] = React.useState<Chapter[]>([])
+    
+       React.useEffect(() => {
+          const fetchManga = async () => {
+            try {
+              const items = await mangaItem();
+              setMangaItems(items);
+              console.log(items)
+            } catch (error) {
+              console.error('Error fetching manga items:', error);
+            }
+      
+          }
+          // const fetchChapter = async () => {
+          //   try {
+          //     const items = await chapter();
+          //     setChapters(items);
+          //     console.log(items)
+          //   } catch (error) {
+          //     console.error('Error fetching chapter items:', error);
+          //   }
+      
+          // }
+      
+          // fetchChapter();
+          fetchManga()
+        }, [])
+  
   return (
     <div className="bg-white rounded-[8px]">
       <div className="flex flex-col">
@@ -32,6 +67,18 @@ export const CatalogSide: React.FC<Props> = ({ className }) => {
           </div>
         </div>
         <div className="grid grid-cols-5 px-2 pb-1">
+          {
+            mangaItems.map((item, index) => (
+              <CatalogSideCard 
+              key={index}
+              name={item.name}
+              imageUrl={item.imageUrl}
+              type={item.type}
+              
+              />
+            ))
+          }
+          {/* <CatalogSideCard />
           <CatalogSideCard />
           <CatalogSideCard />
           <CatalogSideCard />
@@ -41,8 +88,7 @@ export const CatalogSide: React.FC<Props> = ({ className }) => {
           <CatalogSideCard />
           <CatalogSideCard />
           <CatalogSideCard />
-          <CatalogSideCard />
-          <CatalogSideCard />
+          <CatalogSideCard /> */}
         </div>
       </div>
     </div>

@@ -23,6 +23,10 @@ export default {
       transform: {
         "custom-rotate-translate": "rotate(-10deg) translate(-60px, -20px)",
       },
+      maxHeight: {
+        "profileSticky": "calc(100vh-56px-var(16px * 2)"
+
+      },
       backgroundColor: {
         "filtersButton": "rgba(116, 116, 128, 0.05)",
         
@@ -77,5 +81,24 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("tailwind-scrollbar")]
+  plugins: [require("tailwindcss-animate"), require("tailwind-scrollbar"), 
+    function ({ addComponents }: { addComponents: (components: object) => void }) {
+      addComponents({
+        '.scrollbar-hide': {
+          '/* Останавливает отображение полос прокрутки */': {
+            '&::-webkit-scrollbar': {
+              width: '0px',
+              height: '0px',
+            },
+            '&::-webkit-scrollbar-thumb': {
+              background: 'transparent',
+            },
+            '&::-webkit-scrollbar-track': {
+              background: 'transparent',
+            },
+          },
+        },
+      })
+    },
+  ]
 } satisfies Config;

@@ -29,3 +29,4 @@ export { CollectionSectionCard } from "./collection-section-card";
 export { LastUpdateCardSkeleton } from "./last-update-card-skeleton";
 export { ReviewSkeleton } from "./review-skeleton";
 export { GenreDrawer } from "./genre-drawer/genre-drawer";
+export { MangaItems } from "./manga-items";

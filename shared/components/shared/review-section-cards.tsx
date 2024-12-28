@@ -11,7 +11,13 @@ export const ReviewSectionCards: React.FC<Props> = ({ className }) => {
   return (
     <div className="rounded-[8px] flex flex-col">
       <div className=" h-[83.828px] w-full relative">
-        <Image src={image} className="rounded-t-lg object-cover" layout="fill"  alt="avatar" />
+        <Image
+          src={image}
+          height={83.828}
+          className="rounded-t-lg object-cover"
+          layout="fill"
+          alt="avatar"
+        />
       </div>
       <div className="flex flex-col bg-white py-3 px-3 gap-[10px] rounded-b-lg">
         <div className="flex gap-4">
@@ -41,7 +47,7 @@ export const ReviewSectionCards: React.FC<Props> = ({ className }) => {
             </div>
 
             <div className="flex gap-2 text-[12px]">
-              <ThumbsUp  size={14} /> 0
+              <ThumbsUp size={14} /> 0
             </div>
           </div>
           <span className="text-[#8a8a8e] text-[12px]"> 3 часа назад</span>

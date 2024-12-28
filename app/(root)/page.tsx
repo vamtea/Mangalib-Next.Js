@@ -11,6 +11,8 @@ import {
 import { CollectionSection } from "@/shared/components/shared/collection-section";
 import { NowReading } from "@/shared/components/shared/now-read";
 
+
+
 export default function Home() {
   return (
     <>

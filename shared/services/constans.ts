@@ -1,4 +1,5 @@
 export enum ApiRoutes {
     GENRE = 'genre',
-    MANGA_ITEM = 'mangaItem'
+    MANGA_ITEM = 'mangaItem',
+    CHAPTER = 'chapter'
 }
