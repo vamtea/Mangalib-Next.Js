@@ -13,13 +13,12 @@ export const ReviewSectionCards: React.FC<Props> = ({ className }) => {
       <div className=" h-[83.828px] w-full relative">
         <Image
           src={image}
-          height={83.828}
-          className="rounded-t-lg object-cover"
+          className="rounded-t-[8px] object-cover"
           layout="fill"
           alt="avatar"
         />
       </div>
-      <div className="flex flex-col bg-white py-3 px-3 gap-[10px] rounded-b-lg">
+      <div className="flex flex-col bg-white py-3 px-3 gap-[10px] rounded-b-[8px]">
         <div className="flex gap-4">
           <div className=" flex gap-[6px] text-[#8a8a8e] text-[13px] font-normal">
             <div>

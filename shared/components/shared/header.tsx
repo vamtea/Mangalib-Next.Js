@@ -98,15 +98,15 @@ export const Header: React.FC<Props> = ({ className }) => {
 
         <div className="flex flex-1 items-center justify-center gap-2 py-4">
           <div className="relative">
-              <div
-                onClick={toggleCatalogPopup}
-                className=" flex items-center gap-1 hover:bg-[#ffac4036] cursor-pointer px-3 py-1 rounded-[6px] transition-colors duration-200 ease-in-out"
-              >
-                <Layers color="#000000" size={15} />
-                <span>Каталог</span>
-                <ChevronDown color="#000000" size={15} />
-              </div>
-            
+            <div
+              onClick={toggleCatalogPopup}
+              className=" flex items-center gap-1 hover:bg-[#ffac4036] cursor-pointer px-3 py-1 rounded-[6px] transition-colors duration-200 ease-in-out"
+            >
+              <Layers color="#000000" size={15} />
+              <span>Каталог</span>
+              <ChevronDown color="#000000" size={15} />
+            </div>
+
             {catalogPopup && (
               <div className="absolute top-[50px] shasow-catalogDropShadow duration-200 ease-in-out">
                 <div className="flex bg-white p-[6px] rounded-[8px]">
@@ -204,7 +204,9 @@ export const Header: React.FC<Props> = ({ className }) => {
             <div className="cursor-pointer">
               <Bell color="#000000" strokeWidth={1.75} size={17} />
             </div>
-            <Avatar />
+            <Link href="/profile">
+              <Avatar />
+            </Link>
             <Menu color="#000000" strokeWidth={2} size={19} />
           </div>
         </div>

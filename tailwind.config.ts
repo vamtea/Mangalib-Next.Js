@@ -13,7 +13,8 @@ export default {
       boxShadow: {
         "custom": "0 1px 3px rgba(0, 0, 0, 0.12)",
         "catalogDropShadow": "0 4px 16px rgba(0, 0, 0, .2)",
-        "translateCard": "rgba(0, 0, 0, .12) 0 1px 3px"
+        "translateCard": "rgba(0, 0, 0, .12) 0 1px 3px",
+        "friends": "0 4px 8px rgba(0, 0, 0, .04), 0 0 4px rgba(0, 0, 0, .06)",
       },
       backgroundImage: {
         "updates-gradient":

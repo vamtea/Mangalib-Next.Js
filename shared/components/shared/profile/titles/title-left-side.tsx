@@ -1,6 +1,6 @@
 import { LayoutGrid, List, Pencil, Settings } from "lucide-react";
 import React from "react";
-import { ProfileRadioGroup } from "./radio-group";
+import { ProfileRadioGroup } from "../radio-group";
 
 interface Props {
   className?: string;
@@ -89,15 +89,6 @@ export const TitleLeftSide: React.FC<Props> = ({ className }) => {
             <li className="flex text-[#8a8a8e] items-center justify-between mb-[2px] text-[15px] px-2 py-1 cursor-pointer hover:bg-[#7474801e] rounded-[4px]">
               Редактировать... <Pencil size={14} />
             </li>
-            <li className="flex text-[#8a8a8e] items-center justify-between mb-[2px] text-[15px] px-2 py-1 cursor-pointer hover:bg-[#7474801e] rounded-[4px]">
-              Редактировать... <Pencil size={14} />
-            </li>
-            <li className="flex text-[#8a8a8e] items-center justify-between mb-[2px] text-[15px] px-2 py-1 cursor-pointer hover:bg-[#7474801e] rounded-[4px]">
-              Редактировать... <Pencil size={14} />
-            </li>
-            <li className="flex text-[#8a8a8e] items-center justify-between mb-[2px] text-[15px] px-2 py-1 cursor-pointer hover:bg-[#7474801e] rounded-[4px]">
-              Редактировать... <Pencil size={14} />
-            </li>
           </ul>
         </div>
       </div>
@@ -105,7 +96,7 @@ export const TitleLeftSide: React.FC<Props> = ({ className }) => {
       <div>
         <div className="relative py-2 items-center">
           <div className="border-b-[1px] w-full border-[#e5e5e5] absolute top-[18px] z-20 " />
-          <div className=" cursor-pointer ml-2 text-[14px] hover:text-[#000000] text-[#000000ad] gap-2 px-2 bg-[#ffffff] inline-flex items-center -top-[2px] relative z-30 ">
+          <div className=" ml-2 text-[14px]  text-[#000000ad] gap-2 px-2 bg-[#ffffff] inline-flex items-center -top-[2px] relative z-30 ">
             Вид
           </div>
         </div>
@@ -125,7 +116,7 @@ export const TitleLeftSide: React.FC<Props> = ({ className }) => {
       <div>
         <div className="relative py-2 items-center">
           <div className="border-b-[1px] w-full border-[#e5e5e5] absolute top-[18px] z-20 " />
-          <div className=" cursor-pointer ml-2 text-[14px] hover:text-[#000000] text-[#000000ad] gap-2 px-2 bg-[#ffffff] inline-flex items-center -top-[2px] relative z-30 ">
+          <div className=" ml-2 text-[14px]  text-[#000000ad] gap-2 px-2 bg-[#ffffff] inline-flex items-center -top-[2px] relative z-30 ">
             Сортировка
           </div>
         </div>
